@@ -1,0 +1,69 @@
+const userCards = [
+  {
+    title: "Propietarias y directoras",
+    features: [
+      "Visualiza la ocupación y asistencia de todos los grupos",
+      "Lleva el control de pagos y colegiaturas pendientes",
+      "Genera reportes automáticos para análisis mensual",
+      "Administra permisos y accesos de tu equipo",
+      "Cumple con requisitos de documentación de forma digital",
+    ],
+    image: "",
+    background: "bg-orange-card",
+  },
+  {
+    title: "Educadoras",
+    features: [
+      "Pasa lista en un par de clics desde tu celular.",
+      "Envía actualizaciones y fotos a los tutores al mismo tiempo.",
+      "Notifica horarios de comida, siesta y actividades.",
+      "Comunica incidencias o recordatorios importantes.",
+      "Accede a la información de las niñas y niños cuando la necesites.",
+    ],
+    image: "",
+    background: "bg-turquoise-card",
+  },
+  {
+    title: "Tutoras",
+    features: [
+      "Ve fotos y reportes diarios de las actividades de tus hijas e hijos.",
+      "Recibe notificaciones de su entrada y salida a la guardería.",
+      "Consulta el menú de comidas y los horarios.",
+      "Comunícate directamente con las Educadoras a cargo de tus hijas e hijos.",
+      "Revisa tu estado de cuenta y realiza pagos en línea.",
+    ],
+    image: "",
+    background: "bg-yellow-card",
+  },
+  ,
+];
+
+export default function UserSection() {
+  return (
+    <section className="py-20 space-y-8">
+      <h2 className="text-[42px] font-bold py-8">
+        ¿Para qui&eacute;n es Quinder
+      </h2>
+
+      <div className="grid grid-cols-3 items-stretch gap-8">
+        {userCards.map((card) => (
+          <div
+            key={card?.title}
+            className="rounded-[48px] p-6 space-y-6 border border-gray-300"
+          >
+            <div className={`rounded-3xl h-[247px] ${card?.background}`}></div>
+            <div>
+              <p className="text-[22px] font-bold mb-8">{card?.title}</p>
+
+              <ul className="list-disc pl-6 text-txtSecondary text-base font-medium">
+                {card?.features.map((feature) => (
+                  <li key={feature}>{feature}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}

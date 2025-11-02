@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@plugin './hero.ts';
+@source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+
+@theme {
+  --color-primary-green: #30ce6f;
+  --color-primary-purple: #701efe;
+  --color-txtSecondary: #7a7a7c;
+  --color-orange-card: #ff9203;
+  --color-turquoise-card: #63d6d9;
+  --color-yellow-card: #f6c416;
+  --color-pink-card: #ff80bb;
+  --color-slide-bd: #f9f8f4;
+}
