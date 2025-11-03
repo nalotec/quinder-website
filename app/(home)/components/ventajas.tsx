@@ -23,7 +23,7 @@ const ventajas = [
     bgColor: "bg-orange-card",
   },
   {
-    title: "Familias más conectadas y tanquilas",
+    title: "Familias más conectadas y tranquilas",
     description:
       "Los padres reciben actualizaciones y reportes diarios de las actividades de su hija o hijo, sin tener que llamar para preguntar por el estatus.",
     icon: <HouseHeart className="w-24 h-24" strokeWidth={1} />,

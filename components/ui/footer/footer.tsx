@@ -5,7 +5,7 @@ import { CircleArrowRight, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
-    <section className="py-[120px] w-full max-w-8xl px-20 border border-t-gray-300 flex items-start justify-center gap-30">
+    <section className="py-[100px] w-full max-w-8xl px-20 flex items-start justify-center gap-30">
       {/* Logo  */}
       <Link href="/" className="w-fit py-3 px-6 bg-sky-700 rounded-3xl">
         <QuinderLogo variant="dashboardHeader" />
