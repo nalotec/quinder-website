@@ -17,7 +17,6 @@ import {
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import PrimaryBtnLink from "@/components/ui/styledComponents/primaryBtnLink";
-import { lightLayout } from "@heroui/react";
 import DotButton, { useDotButton } from "./carouselDotBtns";
 
 const slides = [
@@ -118,9 +117,8 @@ export default function Carousel() {
     Autoplay({ delay: 6000, stopOnInteraction: true }),
   ]);
 
-  const slide_count = slides.length;
-  const { selectedIndex, scrollSnaps, onDotButtonClick, onSelect, onInit } =
-    useDotButton(emblaApi);
+  // const slide_count = slides.length;
+  const { selectedIndex, onDotButtonClick } = useDotButton(emblaApi);
 
   return (
     <div className="space-y-6">
