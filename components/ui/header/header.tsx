@@ -17,9 +17,9 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 w-full bg-white/90 backdrop-blur transition-all duration-300 ease-out motion-reduce:transition-none ${scrolled ? "py-1.5 shadow-lg" : "py-5 shadow-none"}`}
+      className={`fixed inset-x-0 top-0 z-50 w-full max-w-8xl px-20 bg-white/90 backdrop-blur transition-all duration-300 ease-out motion-reduce:transition-none ${scrolled ? "py-1.5 shadow-lg" : "py-5 shadow-none"}`}
     >
-      <div className="flex justify-between items-center gap-4 w-full max-w-7xl mx-auto">
+      <div className="flex justify-between items-center gap-4 w-full max-w-8xl mx-auto">
         <Link href="/" className="w-fit py-3 px-6 bg-sky-700 rounded-3xl">
           <QuinderLogo variant="dashboardHeader" />
         </Link>

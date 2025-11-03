@@ -117,7 +117,6 @@ export default function Carousel() {
     Autoplay({ delay: 6000, stopOnInteraction: true }),
   ]);
 
-  // const slide_count = slides.length;
   const { selectedIndex, onDotButtonClick } = useDotButton(emblaApi);
 
   return (
@@ -173,6 +172,7 @@ export default function Carousel() {
         </div>
       </div>
 
+      {/* Botones de navegacion del carousel  */}
       <div className="flex flex-col justify-center items-center gap-6 ">
         <div className="flex items-center justify-center gap-3">
           {slides.map((_, index) => (
