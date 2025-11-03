@@ -17,6 +17,8 @@ import {
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import PrimaryBtnLink from "@/components/ui/styledComponents/primaryBtnLink";
+import { lightLayout } from "@heroui/react";
+import DotButton, { useDotButton } from "./carouselDotBtns";
 
 const slides = [
   {
@@ -112,9 +114,13 @@ const slides = [
 ];
 
 export default function Carousel() {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 6000, stopOnInteraction: true }),
   ]);
+
+  const slide_count = slides.length;
+  const { selectedIndex, scrollSnaps, onDotButtonClick, onSelect, onInit } =
+    useDotButton(emblaApi);
 
   return (
     <div className="space-y-6">
@@ -126,9 +132,10 @@ export default function Carousel() {
         {/* Container  */}
         <div className="flex">
           {/* Slides  */}
-          {slides.map((slide) => (
+
+          {slides.map((slide, index) => (
             <div
-              key={slide.id}
+              key={index}
               className="flex-none bg-slide-bd basis-full min-w-0"
             >
               <div className="w-full flex items-center gap-12 p-12 max-w-[1100px] mx-auto">
@@ -168,25 +175,25 @@ export default function Carousel() {
         </div>
       </div>
 
-      {/* Botones  */}
       <div className="flex flex-col justify-center items-center gap-6 ">
-        <ul className="flex items-center justify-center gap-3">
-          <li className="p-1">
-            <CircleSmall className="w-8 h-8" strokeWidth={1} />
-          </li>
-          <li className="p-1">
-            <CircleSmall className="w-8 h-8" strokeWidth={1} />
-          </li>
-          <li className="p-1 bg-primary-purple rounded-full text-white">
-            <CircleSmall className="w-8 h-8" strokeWidth={2} />
-          </li>
-          <li className="p-1">
-            <CircleSmall className="w-8 h-8" strokeWidth={1} />
-          </li>
-          <li className="p-1">
-            <CircleSmall className="w-8 h-8" strokeWidth={1} />
-          </li>
-        </ul>
+        <div className="flex items-center justify-center gap-3">
+          {slides.map((_, index) => (
+            <DotButton
+              key={index}
+              className={`p-1 ${selectedIndex === index ? "bg-primary-purple rounded-full text-white" : ""}`}
+              type="button"
+              onClick={() => {
+                onDotButtonClick(index);
+              }}
+            >
+              <CircleSmall
+                className="w-8 h-8"
+                strokeWidth={selectedIndex === index ? 2 : 1}
+              />
+            </DotButton>
+          ))}
+        </div>
+
         <PrimaryBtnLink>
           Explora todas las funcionalidades
           <CircleArrowRight />
