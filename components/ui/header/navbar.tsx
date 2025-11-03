@@ -34,7 +34,7 @@ export default function Navbar() {
           <li key={link.label}>
             <Link
               href={link.href}
-              className={`${pathName === link.href ? "text-foreground font-semibold" : "text-foreground/60"} py-4 px-6`}
+              className={`${pathName === link.href ? "text-foreground font-semibold" : "text-foreground/60 font-medium"} py-4 px-6`}
             >
               {link.label}
             </Link>
