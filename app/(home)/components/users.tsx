@@ -8,7 +8,8 @@ const userCards = [
       "Administra permisos y accesos de tu equipo",
       "Cumple con requisitos de documentación de forma digital",
     ],
-    image: "",
+    image:
+      "https://res.cloudinary.com/quinder/image/upload/v1762218234/quinder/assets/Directora_ova5lk.png",
     background: "bg-orange-card",
   },
   {
@@ -20,7 +21,8 @@ const userCards = [
       "Comunica incidencias o recordatorios importantes.",
       "Accede a la información de las niñas y niños cuando la necesites.",
     ],
-    image: "",
+    image:
+      "https://res.cloudinary.com/quinder/image/upload/v1762217674/quinder/assets/young-smiling-pretty-caucasian-schoolgirl-wearing-glasses-back-bag-points-side-with-hand-holding-books-green-with-copy-space_1_rehq58.png",
     background: "bg-turquoise-card",
   },
   {
@@ -32,7 +34,8 @@ const userCards = [
       "Comunícate directamente con las Educadoras a cargo de tus hijas e hijos.",
       "Revisa tu estado de cuenta y realiza pagos en línea.",
     ],
-    image: "",
+    image:
+      "https://res.cloudinary.com/quinder/image/upload/v1762218233/quinder/assets/casual-light-lavender-outfits-mother-son-trendy-lifestyle-background-ideal-family-photoshoots-memorable-moments_1_awx9ct.png",
     background: "bg-yellow-card",
   },
   ,
@@ -51,7 +54,15 @@ export default function UserSection() {
             key={card?.title}
             className="rounded-[48px] p-6 space-y-6 border border-gray-300"
           >
-            <div className={`rounded-3xl h-[247px] ${card?.background}`}></div>
+            {/* Imagen  */}
+            <div
+              className={`relative rounded-3xl h-[247px] ${card?.background}`}
+            >
+              <img
+                src={card?.image}
+                className="absolute bottom-0 left-[50%] transform -translate-x-[50%]"
+              />
+            </div>
             <div>
               <p className="text-[22px] font-bold mb-8">{card?.title}</p>
 

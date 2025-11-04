@@ -33,7 +33,12 @@ export default function Hero() {
       </div>
 
       {/* Imagen derecha  */}
-      <div className="w-2/3 border border-gray-300 h-[443px]"></div>
+      <img
+        src="https://res.cloudinary.com/quinder/image/upload/v1762217669/quinder/assets/Ilustracio%CC%81n_l7dujh.png"
+        alt="ilustacion"
+        className="block w-full"
+      />
+      {/* <div className="w-2/3 border border-gray-300 h-[443px]"></div> */}
     </section>
   );
 }

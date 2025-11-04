@@ -22,7 +22,8 @@ import DotButton, { useDotButton } from "./carouselDotBtns";
 const slides = [
   {
     id: "s1",
-    image: "",
+    image:
+      "https://res.cloudinary.com/quinder/image/upload/v1762218423/quinder/assets/slide1_rk9kup.png",
     btnTitle: "check-in y check-out",
     title: "Registra entradas y salidas en segundos, con total seguridad",
     bullets: [
@@ -40,7 +41,8 @@ const slides = [
   },
   {
     id: "s2",
-    image: "",
+    image:
+      "https://res.cloudinary.com/quinder/image/upload/v1762218424/quinder/assets/slide2_mrx4vw.png",
     btnTitle: "cálculo de cobro automático",
     title: "Olvídate de hacer cuentas las calculamos por ti.",
     bullets: [
@@ -58,7 +60,8 @@ const slides = [
   },
   {
     id: "s3",
-    image: "",
+    image:
+      "https://res.cloudinary.com/quinder/image/upload/v1762218424/quinder/assets/slide3_kp4acw.png",
     btnTitle: "planes semanales",
     title: "Planea, aprueba y consulta las actividades de cada grupo",
     bullets: [
@@ -76,7 +79,8 @@ const slides = [
   },
   {
     id: "s4",
-    image: "",
+    image:
+      "https://res.cloudinary.com/quinder/image/upload/v1762218425/quinder/assets/slide4_s8yh8h.png",
     btnTitle: "salones y maestras",
     title: "Organiza tu estancia por grupos y asigna responsables",
     bullets: [
@@ -94,7 +98,8 @@ const slides = [
   },
   {
     id: "s5",
-    image: "",
+    image:
+      "https://res.cloudinary.com/quinder/image/upload/v1762218423/quinder/assets/slide5_ovry9k.png",
     btnTitle: "registro diario de actividades",
     title: "Todo lo que pasó en el día documentado y compartido",
     bullets: [
@@ -137,7 +142,8 @@ export default function Carousel() {
             >
               <div className="w-full flex items-center gap-12 p-12 max-w-[1100px] mx-auto">
                 {/* Imagen  */}
-                <div className="min-w-[400px] h-[499px] border border-gray-300"></div>
+                <img src={slide.image} className="block w-full" />
+                {/* <div className="min-w-[400px] h-[499px] border border-gray-300"></div> */}
 
                 {/* Descripcion  */}
                 <div className="space-y-8">

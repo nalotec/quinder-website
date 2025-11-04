@@ -70,7 +70,12 @@ export default function FreeTrial() {
       </div>
 
       {/* Imagen de footer  */}
-      <div className="h-[446px] border border-gray-300 rounded-md"></div>
+      <img
+        src="https://res.cloudinary.com/quinder/image/upload/v1762217718/quinder/assets/Ilustracio%CC%81nCTA_je1wwg.png"
+        alt="dibujitos"
+        className="block mx-auto"
+      />
+      {/* <div className="h-[446px] border border-gray-300 rounded-md"></div> */}
     </section>
   );
 }
