@@ -10,6 +10,7 @@ import {
   Settings,
   ThumbsUp,
 } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const features = [
   {
@@ -39,12 +40,14 @@ const features = [
 ];
 
 export default function FreeTrial() {
+  const pathname = usePathname();
   return (
     <section className="px-20 pt-20 pb-0 space-y-20">
       {/* Encabezado  */}
       <div className="space-y-12 text-center">
         <h2 className="text-[52px] font-bold">
-          Organ&iacute;zate mejor hoy mismo
+          {pathname === "/" && "Organízate mejor hoy mismo"}
+          {pathname === "/precio" && "¿Qué esperas?"}
         </h2>
         <p className="text-3xl font-semibold">
           Prueba todas las funciones sin compromiso
