@@ -43,6 +43,7 @@ export default function PricingCards() {
 
   return (
     <div className="p-20">
+      {/* TODO: Ajustar los tamaños de fuente, grid-cols y espaciado para los diferentes tamaños de pantalla  */}
       <div className="grid grid-cols-4 gap-6">
         {prices.map((price) => (
           <div
