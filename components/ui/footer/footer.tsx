@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import QuinderLogo from "../quinderLogo";
 import { Button } from "@heroui/button";
@@ -28,7 +30,12 @@ export default function Footer() {
       <div className="space-y-4 font-semibold">
         <p>Prueba gratuita</p>
         <div>
-          <Button variant="bordered" className="font-semibold">
+          <Button
+            as={Link}
+            href="/prueba-gratuita"
+            variant="bordered"
+            className="font-semibold"
+          >
             Iniciar ahora
             <CircleArrowRight />
           </Button>

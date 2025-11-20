@@ -1,7 +1,6 @@
 "use client";
 
-import PrimaryBtnLink from "@/components/ui/styledComponents/primaryBtnLink";
-import { CircleArrowRight } from "lucide-react";
+import { LinkButton } from "@/components/ui/styledComponents/button";
 
 export default function Hero() {
   return (
@@ -25,11 +24,7 @@ export default function Hero() {
           informados y organiza a tu equipo desde una aplicaci&oacute;n para
           todas. Simple, pr&aacute;ctica para tu d&iacute;a a d&iacute;a.
         </p>
-
-        <PrimaryBtnLink>
-          Inicia una prueba gratuita
-          <CircleArrowRight />
-        </PrimaryBtnLink>
+        <LinkButton />
       </div>
 
       {/* Imagen derecha  */}

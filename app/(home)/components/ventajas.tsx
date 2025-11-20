@@ -6,28 +6,28 @@ const ventajas = [
     description:
       "Automatiza reportes, asistencias y comunicación para que tu equipo se enfoque en lo que realmente importa.",
     icon: <ClockArrowDown className="w-24 h-24" strokeWidth={1} />,
-    bgColor: "bg-turquoise-card",
+    bgColor: "bg-primary-turquoise",
   },
   {
     title: "Ten mayor control y seguridad",
     description:
       "Visibilidad completa de quién entra y sale de tu guardería, a qué hora y con quién. Todo registrado automáticamente para tu tranquilidad y la de las familias.",
     icon: <ShieldPlus className="w-24 h-24" strokeWidth={1} />,
-    bgColor: "bg-pink-card",
+    bgColor: "bg-primary-pink",
   },
   {
     title: "Simplifica la gestión de pagos",
     description:
       "Desglose completo de cobros: cuánto tiempo extra estuvieron, cuánto les corresponde pagar y el total. Sin sorpresas, sin malentendidos, y sin cálculos manuales.",
     icon: <Wallet className="w-24 h-24" strokeWidth={1} />,
-    bgColor: "bg-orange-card",
+    bgColor: "bg-primary-orange",
   },
   {
     title: "Familias más conectadas y tranquilas",
     description:
       "Los padres reciben actualizaciones y reportes diarios de las actividades de su hija o hijo, sin tener que llamar para preguntar por el estatus.",
     icon: <HouseHeart className="w-24 h-24" strokeWidth={1} />,
-    bgColor: "bg-yellow-card",
+    bgColor: "bg-primary-yellow",
   },
 ];
 

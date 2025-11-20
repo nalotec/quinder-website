@@ -1,6 +1,3 @@
-import { Button } from "@heroui/button";
-import { CircleArrowRight } from "lucide-react";
-
 export default function PricingCards() {
   const prices = [
     {
@@ -9,7 +6,7 @@ export default function PricingCards() {
       precioMensual: 700,
       line1: "Cancela",
       line2: "cuando quieras",
-      color: "pink-card",
+      color: "primary-pink",
       recommended: false,
     },
     {
@@ -18,7 +15,7 @@ export default function PricingCards() {
       precioMensual: 633,
       line1: "ahorra $210",
       line2: "Obtén 3 meses con descuento",
-      color: "orange-card",
+      color: "primary-orange",
       recommended: false,
     },
     {
@@ -27,7 +24,7 @@ export default function PricingCards() {
       precioMensual: 583,
       line1: "ahorra $700",
       line2: "6 meses por el precio de 5",
-      color: "turquoise-card",
+      color: "primary-turquoise",
       recommended: true,
     },
     {
@@ -36,7 +33,7 @@ export default function PricingCards() {
       precioMensual: 583,
       line1: "Ahorra $1,400",
       line2: "12 meses por el precio de 10",
-      color: "yellow-card",
+      color: "primary-yellow",
       recommended: false,
     },
   ];
@@ -94,7 +91,6 @@ export default function PricingCards() {
                   </p>
                 </div>
                 <p className="text-[24px] text-right ">{price.periodo}es</p>
-                {/* {price.precioMensual && ( */}
                 <p
                   className={`text-[18px] text-txtSecondary text-right ${price.periodo === "mensual" ? "text-white" : ""} `}
                 >
@@ -129,16 +125,6 @@ export default function PricingCards() {
                   <li>Registro diaria de actividades</li>
                 </ul>
               </div>
-            </div>
-
-            <div>
-              <Button
-                className="w-full font-semibold  py-5 pl-6 pr-4 flex items-center justify-between bg-slide-bd rounded-[18px]"
-                variant="bordered"
-              >
-                Contratar
-                <CircleArrowRight />
-              </Button>
             </div>
           </div>
         ))}

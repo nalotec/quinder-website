@@ -10,7 +10,7 @@ const userCards = [
     ],
     image:
       "https://res.cloudinary.com/quinder/image/upload/v1762218234/quinder/assets/Directora_ova5lk.png",
-    background: "bg-orange-card",
+    background: "bg-primary-orange",
   },
   {
     title: "Educadoras",
@@ -23,7 +23,7 @@ const userCards = [
     ],
     image:
       "https://res.cloudinary.com/quinder/image/upload/v1762217674/quinder/assets/young-smiling-pretty-caucasian-schoolgirl-wearing-glasses-back-bag-points-side-with-hand-holding-books-green-with-copy-space_1_rehq58.png",
-    background: "bg-turquoise-card",
+    background: "bg-primary-turquoise",
   },
   {
     title: "Tutoras",
@@ -36,7 +36,7 @@ const userCards = [
     ],
     image:
       "https://res.cloudinary.com/quinder/image/upload/v1762218233/quinder/assets/casual-light-lavender-outfits-mother-son-trendy-lifestyle-background-ideal-family-photoshoots-memorable-moments_1_awx9ct.png",
-    background: "bg-yellow-card",
+    background: "bg-primary-yellow",
   },
   ,
 ];
@@ -61,10 +61,11 @@ export default function UserSection() {
               <img
                 src={card?.image}
                 className="absolute bottom-0 left-[50%] transform -translate-x-[50%]"
+                alt=""
               />
             </div>
             <div>
-              <p className="text-[22px] font-bold mb-8">{card?.title}</p>
+              <h3 className="text-[22px] font-bold mb-8">{card?.title}</h3>
 
               <ul className="list-disc pl-6 text-txtSecondary text-base font-medium">
                 {card?.features.map((feature) => (

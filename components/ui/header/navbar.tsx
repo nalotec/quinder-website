@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { CircleArrowRight } from "lucide-react";
 import { usePathname } from "next/navigation";
-import PrimaryBtnLink from "../styledComponents/primaryBtnLink";
+import { LinkButton } from "../styledComponents/button";
 
 const navlinks = [
   {
@@ -42,10 +41,7 @@ export default function Navbar() {
         ))}
       </ul>
       <div>
-        <PrimaryBtnLink>
-          Inicia una prueba gratuita
-          <CircleArrowRight />
-        </PrimaryBtnLink>
+        <LinkButton />
       </div>
     </div>
   );

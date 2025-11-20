@@ -1,10 +1,9 @@
 "use client";
 
-import PrimaryBtnLink from "@/components/ui/styledComponents/primaryBtnLink";
+import { LinkButton } from "@/components/ui/styledComponents/button";
 import {
   Ban,
   CalendarCheck2,
-  CircleArrowRight,
   Headset,
   HeartHandshake,
   Settings,
@@ -53,10 +52,7 @@ export default function FreeTrial() {
           Prueba todas las funciones sin compromiso
         </p>
         <div>
-          <PrimaryBtnLink>
-            Inicia una prueba gratuita
-            <CircleArrowRight />
-          </PrimaryBtnLink>
+          <LinkButton />
         </div>
       </div>
 
