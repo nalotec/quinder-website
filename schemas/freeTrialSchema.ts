@@ -9,7 +9,7 @@ export const FreeTrialFormSchema = z.object({
       role: z
         .transform(Number)
         .pipe(z.number())
-        .refine((val) => val === 1 || val === 4, {
+        .refine((val) => val > 0 || val < 4, {
           error: "Seleccione un rol de usuario válido",
         }),
       email: z.email({ message: "Ingrese un correo electrónico válido" }),
@@ -31,13 +31,19 @@ export const FreeTrialFormSchema = z.object({
       .string()
       .min(1, { message: "Ingrese la dirección de la estancia" }),
     address_2: z.string().optional(),
-    colony: z.string().min(1, { message: "Ingrese la colonia" }),
+    colony: z.string().min(1, { error: "Ingrese la colonia" }),
     city: z.string().min(1, { message: "Ingrese la alcaldía o municipio" }),
+    phone: z.string().optional(),
+    website_url: z.string().optional(),
     state: z.string().refine((val) => val !== "", {
       error: "Seleccione el estado de la lista",
     }),
     zip_code: z
       .string()
       .regex(/^\d{5}$/, "Ingrese un código postal de 5 dígitos"),
+    classrooms: z.transform(Number).pipe(z.number()).optional(),
+    children: z.transform(Number).pipe(z.number()).optional(),
+    terms_and_conditions: z.boolean(),
+    privacy_policy: z.boolean(),
   }),
 });
