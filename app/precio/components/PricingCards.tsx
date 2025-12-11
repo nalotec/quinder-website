@@ -1,24 +1,6 @@
 export default function PricingCards() {
   const prices = [
     {
-      periodo: "mensual",
-      precioPeriodo: 700,
-      precioMensual: 700,
-      line1: "Cancela",
-      line2: "cuando quieras",
-      color: "primary-pink",
-      recommended: false,
-    },
-    {
-      periodo: "trimestral",
-      precioPeriodo: 1900,
-      precioMensual: 633,
-      line1: "ahorra $210",
-      line2: "Obtén 3 meses con descuento",
-      color: "primary-orange",
-      recommended: false,
-    },
-    {
       periodo: "semestral",
       precioPeriodo: 3500,
       precioMensual: 583,
@@ -36,12 +18,30 @@ export default function PricingCards() {
       color: "primary-yellow",
       recommended: false,
     },
+    {
+      periodo: "trimestral",
+      precioPeriodo: 1900,
+      precioMensual: 633,
+      line1: "ahorra $210",
+      line2: "Obtén 3 meses con descuento",
+      color: "primary-orange",
+      recommended: false,
+    },
+    {
+      periodo: "mensual",
+      precioPeriodo: 700,
+      precioMensual: 700,
+      line1: "Cancela",
+      line2: "cuando quieras",
+      color: "primary-pink",
+      recommended: false,
+    },
   ];
 
   return (
-    <div className="p-20">
+    <div className="px-2 py-3 mt-16">
       {/* TODO: Ajustar los tamaños de fuente, grid-cols y espaciado para los diferentes tamaños de pantalla  */}
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid grid-cols-1  xl:grid-cols-4 gap-6">
         {prices.map((price) => (
           <div
             key={price.periodo}
@@ -74,9 +74,7 @@ export default function PricingCards() {
             <div className="space-y-8">
               {/* Periodo  */}
               <div className="relative w-fit mx-auto">
-                <p className="capitalize font-bold text-[26px] text-center">
-                  {price.periodo}
-                </p>
+                <p className="quinder-h2 capitalize">{price.periodo}</p>
                 <div
                   className={`absolute w-full h-1.5 bg-${price.color} rounded-3xl -bottom-0.5 right-0 transform -rotate-1`}
                 ></div>
@@ -86,11 +84,13 @@ export default function PricingCards() {
               <div className="font-bold w-fit mx-auto">
                 <div className="flex justify-center items-start gap-1 leading-none py-0">
                   <p className="text-[42px] pt-1.5">$</p>
-                  <p className="text-[72px]">
+                  <p className="text-[56px] xl:text-[72px]">
                     {price.precioPeriodo.toLocaleString("es-MX")}
                   </p>
                 </div>
-                <p className="text-[24px] text-right ">{price.periodo}es</p>
+                <p className="text-xl xl:text-[24px] text-right ">
+                  {price.periodo}es
+                </p>
                 <p
                   className={`text-[18px] text-txtSecondary text-right ${price.periodo === "mensual" ? "text-white" : ""} `}
                 >

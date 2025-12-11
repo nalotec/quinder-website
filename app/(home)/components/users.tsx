@@ -1,3 +1,10 @@
+"use client";
+
+import UnderlineText from "@/components/ui/underlineText";
+import { Button } from "@heroui/button";
+import { CircleArrowRight } from "lucide-react";
+import Link from "next/link";
+
 const userCards = [
   {
     title: "Propietarias y directoras",
@@ -11,6 +18,7 @@ const userCards = [
     image:
       "https://res.cloudinary.com/quinder/image/upload/v1762218234/quinder/assets/Directora_ova5lk.png",
     background: "bg-primary-orange",
+    href: "/funcionalidades/directora",
   },
   {
     title: "Educadoras",
@@ -24,6 +32,7 @@ const userCards = [
     image:
       "https://res.cloudinary.com/quinder/image/upload/v1762217674/quinder/assets/young-smiling-pretty-caucasian-schoolgirl-wearing-glasses-back-bag-points-side-with-hand-holding-books-green-with-copy-space_1_rehq58.png",
     background: "bg-primary-turquoise",
+    href: "/funcionalidades/educadora",
   },
   {
     title: "Tutoras",
@@ -32,11 +41,12 @@ const userCards = [
       "Recibe notificaciones de su entrada y salida a la guardería.",
       "Consulta el menú de comidas y los horarios.",
       "Comunícate directamente con las Educadoras a cargo de tus hijas e hijos.",
-      "Revisa tu estado de cuenta y realiza pagos en línea.",
+      // "Revisa tu estado de cuenta y realiza pagos en línea.",
     ],
     image:
       "https://res.cloudinary.com/quinder/image/upload/v1762218233/quinder/assets/casual-light-lavender-outfits-mother-son-trendy-lifestyle-background-ideal-family-photoshoots-memorable-moments_1_awx9ct.png",
     background: "bg-primary-yellow",
+    href: "/funcionalidades/padres",
   },
   ,
 ];
@@ -44,11 +54,12 @@ const userCards = [
 export default function UserSection() {
   return (
     <section className="py-20 space-y-8">
-      <h2 className="text-[42px] font-bold py-8">
-        ¿Para qui&eacute;n es Quinder
+      {/* <h2 className="text-xl text-center xl:text-left xl:text-[42px] font-bold xl:py-8"> */}
+      <h2 className="quinder-h2 text-center">
+        ¿Para <UnderlineText>qui&eacute;n</UnderlineText> es Quinder
       </h2>
 
-      <div className="grid grid-cols-3 items-stretch gap-8">
+      <div className="grid grid-cols-1 xl:grid-cols-3 items-stretch gap-8">
         {userCards.map((card) => (
           <div
             key={card?.title}
@@ -56,23 +67,35 @@ export default function UserSection() {
           >
             {/* Imagen  */}
             <div
-              className={`relative rounded-3xl h-[247px] ${card?.background}`}
+              className={`relative rounded-3xl h-[200px] ${card?.background}`}
             >
               <img
                 src={card?.image}
-                className="absolute bottom-0 left-[50%] transform -translate-x-[50%]"
+                className="absolute bottom-0 left-[50%] h-[220px] transform -translate-x-[50%]"
                 alt=""
               />
             </div>
             <div>
-              <h3 className="text-[22px] font-bold mb-8">{card?.title}</h3>
+              <h3 className="text-base xl:text-[22px] font-bold mb-8">
+                {card?.title}
+              </h3>
 
-              <ul className="list-disc pl-6 text-txtSecondary text-base font-medium">
+              <ul className="list-disc pl-6 text-txtSecondary text-sm xl:text-base font-medium">
                 {card?.features.map((feature) => (
                   <li key={feature}>{feature}</li>
                 ))}
               </ul>
             </div>
+
+            <Button
+              as={Link}
+              href={card?.href}
+              variant="bordered"
+              className="w-full bg-slide-bd py-3 rounded-2xl font-semibold"
+            >
+              Explora m&aacute;s funcionalidades
+              <CircleArrowRight />
+            </Button>
           </div>
         ))}
       </div>

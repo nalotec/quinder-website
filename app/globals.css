@@ -15,9 +15,31 @@
 }
 
 @layer base {
-  h1 {
-    font-size: 52px;
-    font-weight: bold;
-    line-height: 150%;
+  /* h1 { */
+  /*   font-size: 52px; */
+  /*   font-weight: bold; */
+  /*   line-height: 150%; */
+  /* } */
+}
+
+@layer components {
+  .quinder-h1 {
+    @apply text-[22px] text-center xl:text-left xl:text-[52px] font-bold leading-normal text-foreground;
+  }
+
+  .quinder-h2 {
+    @apply text-xl md:text-[32px] xl:text-[42px] font-bold;
+  }
+
+  .quinder-h3 {
+    @apply text-[16px] md:text-[22px] xl:text-3xl font-bold;
+  }
+
+  .quinder-p-display {
+    @apply text-txtSecondary text-sm md:text-lg xl:text-2xl font-semibold;
+  }
+
+  .quinder-p {
+    @apply text-txtSecondary text-sm md:text-base xl:text-[16px] font-medium;
   }
 }

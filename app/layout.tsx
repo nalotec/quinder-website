@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${quicksand.className} antialiased`}>
         <Header />
-        <main className="pt-[103px] w-full px-20 max-w-8xl mx-auto border-t">
+        <main className="py-[55px] xl:pt-[103px] w-full px-3 xl:px-20 max-w-8xl mx-auto border-t">
           {children}
         </main>
         <Footer />

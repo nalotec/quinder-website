@@ -35,8 +35,8 @@ export default function Step1UserData() {
   return (
     <div className="space-y-8">
       <div className="space-y-2">
-        <p className="text-3xl font-bold">Tus datos</p>
-        <p className="text-2xl font-medium">
+        <p className="quinder-h2">Tus datos</p>
+        <p className="quinder-p-display text-[16px]">
           {/* Cu&eacute;ntanos un poco más sobre ti. */}
           Ingresa tus datos
         </p>
@@ -49,9 +49,9 @@ export default function Step1UserData() {
           <RadioGroup
             {...field}
             label="¿Cuál es tu rol dentro de la guardería?"
-            orientation="horizontal"
+            // orientation="horizontal"
             classNames={{
-              label: "text-[18px] text-foreground font-semibold mb-3",
+              label: "quinder-p font-bold text-foreground",
             }}
             isInvalid={!!errores.userDto?.role}
             errorMessage={errores.userDto?.role?.message}
@@ -64,7 +64,7 @@ export default function Step1UserData() {
                 value={rol.id.toString()}
                 className="mr-3"
                 classNames={{
-                  label: "text-txtSecondary text-[18px] font-medium pl-1",
+                  label: "text-sm text-txtSecondary font-medium pl-1",
                 }}
               >
                 {rol.desc}
@@ -74,7 +74,7 @@ export default function Step1UserData() {
         )}
       />
 
-      <div className="flex items-start gap-8">
+      <div className="space-y-6 xl:flex xl:items-start xl:gap-8">
         {/* Nombre  */}
         <Input
           {...register("userDto.name")}
@@ -84,9 +84,9 @@ export default function Step1UserData() {
           label="Nombre"
           labelPlacement="outside-top"
           classNames={{
-            label: "text-[18px] text-foreground font-semibold",
-            input: "text-txtSecondary text-[18px] font-medium",
-            errorMessage: "text-base font-medium text-danger",
+            label: "text-sm xl:text-[18px] text-foreground font-semibold",
+            input: "text-txtSecondary text-sm xl:text-[18px] font-medium",
+            errorMessage: "text-xs xl:text-base font-medium text-danger",
           }}
           isInvalid={!!errores.userDto?.name}
           errorMessage={errores.userDto?.name?.message}
@@ -101,8 +101,8 @@ export default function Step1UserData() {
           label="Apellidos"
           labelPlacement="outside-top"
           classNames={{
-            label: "text-[18px] text-foreground font-semibold",
-            input: "text-txtSecondary text-[18px] font-medium",
+            label: "text-sm xl:text-[18px] text-foreground font-semibold",
+            input: "text-txtSecondary text-sm xl:text-[18px] font-medium",
             errorMessage: "text-base font-medium text-danger",
           }}
           isInvalid={!!errores.userDto?.last_name}
@@ -110,7 +110,7 @@ export default function Step1UserData() {
         />
       </div>
 
-      <div className="flex items-start gap-8">
+      <div className="space-y-6 xl:flex xl:items-start xl:gap-8">
         {/* Correo electrónico  */}
         <Input
           {...register("userDto.email")}
@@ -120,9 +120,9 @@ export default function Step1UserData() {
           label="Correo Electrónico"
           labelPlacement="outside-top"
           classNames={{
-            label: "text-[18px] text-foreground font-semibold",
-            input: "text-txtSecondary text-[18px] font-medium",
-            errorMessage: "text-base font-medium text-danger",
+            label: "text-sm xl:text-[18px] text-foreground font-semibold",
+            input: "text-txtSecondary text-sm xl:text-[18px] font-medium",
+            errorMessage: "text-xs xl:text-base font-medium text-danger",
           }}
           isInvalid={!!errores.userDto?.email}
           errorMessage={errores.userDto?.email?.message}
@@ -137,9 +137,9 @@ export default function Step1UserData() {
           label="Teléfono"
           labelPlacement="outside-top"
           classNames={{
-            label: "text-[18px] text-foreground font-semibold",
-            input: "text-txtSecondary text-[18px] font-medium",
-            errorMessage: "text-base font-medium text-danger",
+            label: "text-sm xl:text-[18px] text-foreground font-semibold",
+            input: "text-txtSecondary text-sm  xl:text-[18px] font-medium",
+            errorMessage: "text-xs xl:text-base font-medium text-danger",
           }}
           isInvalid={!!errores.userDto?.phone}
           errorMessage={errores.userDto?.phone?.message}
@@ -147,7 +147,7 @@ export default function Step1UserData() {
         />
       </div>
 
-      <div className="flex items-start gap-8">
+      <div className="space-y-6 xl:flex xl:items-start xl:gap-8">
         {/* Contraseña */}
         <Input
           {...register("userDto.password")}
@@ -157,9 +157,9 @@ export default function Step1UserData() {
           label="Contraseña"
           labelPlacement="outside-top"
           classNames={{
-            label: "text-[18px] text-foreground font-semibold",
-            input: "text-txtSecondary text-[18px] font-medium",
-            errorMessage: "text-base font-medium text-danger",
+            label: "text-sm xl:text-[18px] text-foreground font-semibold",
+            input: "text-txtSecondary text-sm xl:text-[18px] font-medium",
+            errorMessage: "text-xd xl:text-base font-medium text-danger",
           }}
           isInvalid={!!errores.userDto?.password}
           errorMessage={errores.userDto?.password?.message}
@@ -174,9 +174,9 @@ export default function Step1UserData() {
           label="Confirmar contraseña"
           labelPlacement="outside-top"
           classNames={{
-            label: "text-[18px] text-foreground font-semibold",
-            input: "text-txtSecondary text-[18px] font-medium",
-            errorMessage: "text-base font-medium text-danger",
+            label: "text-sm xl:text-[18px] text-foreground font-semibold",
+            input: "text-txtSecondary text-sm xl:text-[18px] font-medium",
+            errorMessage: "text-sm xl:text-base font-medium text-danger",
           }}
           isInvalid={!!errores.userDto?.passwordConfirm}
           errorMessage={errores.userDto?.passwordConfirm?.message}

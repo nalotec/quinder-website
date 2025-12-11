@@ -6,7 +6,7 @@ const publicRoutes = [
   "/test",
   "/contacto",
   "/precio",
-  "/funciones",
+  "/funcionalidades",
   "/prueba-gratuita",
   "/aviso-privacidad",
   "/terminos-condiciones",

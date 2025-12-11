@@ -1,19 +1,15 @@
+import HighlightedText from "@/components/ui/highligtedText";
+import UnderlineText from "@/components/ui/underlineText";
+
 export default function PricingTitle() {
   return (
-    <div className="pt-20 px-20 pb-12 text-[52px] text-center font-bold bg-slide-bd">
-      <h2>
-        <div className="relative inline-block">
-          <p className="">Un solo plan</p>
-          <div className="absolute w-full h-3 bg-primary-green rounded-3xl -bottom-0.5 right-0 transform -rotate-1"></div>
-        </div>
-        , todas las funcionalidades.
-      </h2>
-      <h3>
-        T&uacute; decides cu&aacute;ndo pagar y cu&aacute;nto
-        <span className="bg-primary-green rounded-full px-4 py-0.5">
-          ahorrar
-        </span>
-      </h3>
+    <div className="pt-6 pb-13 px-12 xl:pt-20 xl:px-20 xl:pb-12 xl:text-[52px] bg-slide-bd">
+      <h1 className="quinder-h1 text-center">
+        <UnderlineText>Un solo plan</UnderlineText>, todas las funcionalidades.
+        <br />
+        T&uacute; decides cu&aacute;ndo pagar y cu&aacute;nto{" "}
+        <HighlightedText>ahorrar</HighlightedText>
+      </h1>
     </div>
   );
 }

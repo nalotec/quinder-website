@@ -18,14 +18,18 @@ export const LinkButton = forwardRef<HTMLButtonElement, StyledButtonProps>(
       variant={variant || "solid"}
       color={color || "primary"}
       className={cn(
-        "bg-primary-purple rounded-3xl py-8 text-lg font-medium",
+        `bg-primary-purple font-semibold text-[16px] rounded-xl pr-4 pl-6 w-full 
+         md:w-fit
+         xl-text-lg xl:rounded-3xl xl:py-8
+
+        `,
         className,
       )}
     >
       {!children && (
         <>
           Iniciar prueba gratuita
-          <CircleArrowRight />
+          <CircleArrowRight className="w-6 h-6 xl:w-6 xl:h-6" />
         </>
       )}
       {children}

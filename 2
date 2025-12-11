@@ -152,7 +152,7 @@ export default function Step2EstanciaData() {
         errorMessage={errores.estanciaDto?.address_2?.message}
       />
 
-      <div className="space-y-6 xl:flex xl:items-top xl:justify-center xl:gap-9">
+      <div className="flex items-top justify-center gap-9">
         <Input
           {...register("estanciaDto.colony")}
           type="text"
@@ -187,7 +187,7 @@ export default function Step2EstanciaData() {
         />
       </div>
 
-      <div className="space-y-6 xl:flex xl:items-top xl:justify-center xl:gap-9">
+      <div className="flex items-top justify-center gap-9">
         <Input
           {...register("estanciaDto.state")}
           type="text"
@@ -196,9 +196,9 @@ export default function Step2EstanciaData() {
           label="Estado"
           labelPlacement="outside-top"
           classNames={{
-            label: "text-sm xl:text-[18px] text-foreground font-semibold",
-            input: "text-sm text-txtSecondary xl:text-[18px] font-medium",
-            errorMessage: "text-xs xl:text-base font-medium text-danger",
+            label: "text-[18px] text-foreground font-semibold",
+            input: "text-txtSecondary text-[18px] font-medium",
+            errorMessage: "text-base font-medium text-danger",
           }}
           isInvalid={!!errores.estanciaDto?.state}
           errorMessage={errores.estanciaDto?.state?.message}
@@ -213,9 +213,9 @@ export default function Step2EstanciaData() {
           label="Código postal"
           labelPlacement="outside-top"
           classNames={{
-            label: "text-sm xl:text-[18px] text-foreground font-semibold",
-            input: "text-sm text-txtSecondary xl:text-[18px] font-medium",
-            errorMessage: "text-xs xl:text-base font-medium text-danger",
+            label: "text-[18px] text-foreground font-semibold",
+            input: "text-txtSecondary text-[18px] font-medium",
+            errorMessage: "text-base font-medium text-danger",
           }}
           isInvalid={!!errores.estanciaDto?.zip_code}
           errorMessage={errores.estanciaDto?.zip_code?.message}

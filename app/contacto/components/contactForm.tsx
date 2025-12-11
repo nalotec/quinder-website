@@ -69,7 +69,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-white border-2 border-gray-300 rounded-[48px] p-12 transform -translate-y-10">
+    <div className="bg-white border-2 border-gray-300 rounded-3xl p-6 xl:rounded-[48px] xl:p-12 xl:transform xl:-translate-y-10">
       {/* Formulario principal  */}
       {formState.status !== "success" && (
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -81,9 +81,9 @@ export default function ContactForm() {
               <RadioGroup
                 {...field}
                 label="Asunto"
-                orientation="horizontal"
+                // orientation="horizontal"
                 classNames={{
-                  label: "text-[18px] text-foreground font-semibold",
+                  label: "text-sm text-foreground font-bold",
                 }}
                 defaultValue={asuntos[0]}
                 isDisabled={isPending}
@@ -96,7 +96,7 @@ export default function ContactForm() {
                     value={asunto as string}
                     className="mr-3"
                     classNames={{
-                      label: "text-txtSecondary text-[18px] font-medium pl-2",
+                      label: "text-sm text-txtSecondary font-medium pl-2",
                     }}
                   >
                     <p className="capitalize">{asunto}</p>
@@ -111,12 +111,12 @@ export default function ContactForm() {
             <Input
               {...form.register("name")}
               label="Nombre completo"
-              labelPlacement="outside"
+              labelPlacement="outside-top"
               placeholder="p. ej. Alondra Pérez García"
               variant="bordered"
               classNames={{
-                label: "font-semibold text-[18px]",
-                input: "text-[18px] bg-white",
+                label: "quinder-p font-bold",
+                input: "quider-p bg-white",
                 errorMessage: "text-sm font-medium",
               }}
               isInvalid={!!form.formState.errors.name}
@@ -135,7 +135,7 @@ export default function ContactForm() {
                 label="¿Cuál es tu rol dentro de la guardería?"
                 orientation="horizontal"
                 classNames={{
-                  label: "text-[18px] text-foreground font-semibold",
+                  label: "text-sm xl:text-[18px] text-foreground font-semibold",
                 }}
                 defaultValue={roles[0]}
                 isDisabled={isPending}
@@ -146,7 +146,8 @@ export default function ContactForm() {
                     value={rol}
                     className="mr-3"
                     classNames={{
-                      label: "text-txtSecondary text-[18px] font-medium pl-2",
+                      label:
+                        "text-txtSecondary text-sm xl:text-[18px] font-medium pl-2",
                     }}
                   >
                     {rol}
@@ -157,18 +158,18 @@ export default function ContactForm() {
           />
 
           {/* Correo electronico y teléfono  */}
-          <div className="pt-2 flex justify-center items-start gap-12">
+          <div className="space-y-6 pt-2 xl:flex xl:justify-center xl:items-start xl:gap-12">
             {/* Email */}
             <Input
               {...form.register("email")}
               label="Correo electrónico"
-              labelPlacement="outside"
+              labelPlacement="outside-top"
               placeholder="p.ej. alondra@mail.com"
               variant="bordered"
               classNames={{
-                label: "font-semibold text-[18px]",
-                input: "text-[18px] bg-white",
-                errorMessage: "text-sm font-medium",
+                label: "font-semibold text-sm xl:text-[18px]",
+                input: "text-sm xl:text-[18px] bg-white",
+                errorMessage: "text-xs xl:text-sm font-medium",
               }}
               isInvalid={!!form.formState.errors.email}
               errorMessage={form.formState.errors.email?.message}
@@ -179,13 +180,13 @@ export default function ContactForm() {
             <Input
               {...form.register("phone")}
               label="Teléfono de contacto (opcional)"
-              labelPlacement="outside"
+              labelPlacement="outside-top"
               placeholder="p.ej. 5566778899"
               variant="bordered"
               classNames={{
-                label: "font-semibold text-[18px]",
-                input: "text-[18px] bg-white",
-                errorMessage: "text-sm font-medium",
+                label: "font-semibold text-sm xl:text-[18px]",
+                input: "text-sm xl:text-[18px] bg-white",
+                errorMessage: "text-xs xl:text-sm font-medium",
               }}
               isInvalid={!!form.formState.errors.phone}
               errorMessage={form.formState.errors.phone?.message}
@@ -201,15 +202,15 @@ export default function ContactForm() {
               <Textarea
                 {...field}
                 label="¿En qué te podemos ayudar?"
-                labelPlacement="outside"
+                labelPlacement="outside-top"
                 placeholder={setPlaceholder(watchSubject)}
                 variant="bordered"
                 minRows={10}
                 isClearable={true}
                 classNames={{
-                  label: "font-semibold text-[18px]",
-                  input: "text-[18px] bg-white",
-                  errorMessage: "text-sm font-medium",
+                  label: "font-semibold text-sm xl:text-[18px]",
+                  input: "text-sm xl:text-[18px] bg-white",
+                  errorMessage: "text-xs xl:text-sm font-medium",
                 }}
                 isInvalid={!!form.formState.errors.detail}
                 errorMessage={form.formState.errors.detail?.message}
@@ -222,11 +223,11 @@ export default function ContactForm() {
             <Button
               type="submit"
               variant="solid"
-              className="bg-primary-purple py-7 pl-6 pr-4 font-semibold text-white text-[18px] rounded-3xl"
+              className="bg-primary-purple py-2 pl-3 pr-2 rounded-[18px] text-sm xl:py-7 xl:pl-6 xl:pr-4 font-semibold text-white xl:text-[18px] xl:rounded-3xl"
               isLoading={isPending}
             >
               Enviar formulario
-              <CircleArrowRight />
+              <CircleArrowRight className="w-6 h-6" />
             </Button>
           </div>
         </form>
@@ -234,8 +235,8 @@ export default function ContactForm() {
 
       {/* Mensaje de confirmación  */}
       {formState.status === "success" && (
-        <div className="text-[18px] font-medium text-txtSecondary space-y-8">
-          <p className="text-3xl font-bold text-foreground">¿Que sigue?</p>
+        <div className="quinder-p space-y-8">
+          <p className="quinder-h1 text-left">¿Que sigue?</p>
           <div>
             <p>
               Recibimos tu solicitud sobre{" "}

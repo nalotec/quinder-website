@@ -62,14 +62,13 @@ export default function FreeTrialForm() {
     // Paso 1: Datos del usuario
     if (currentStep === 0) {
       valid = await form.trigger([
-        // "userDto.role",
+        "userDto.role",
         "userDto.name",
         "userDto.last_name",
         "userDto.email",
         "userDto.phone",
         "userDto.password",
         "userDto.passwordConfirm",
-        "userDto.role",
       ]);
 
       if (valid) {
@@ -98,7 +97,7 @@ export default function FreeTrialForm() {
   };
 
   return (
-    <div className="border-2 border-gray-300 p-12 rounded-[48px] space-y-12 bg-white transform -translate-y-9">
+    <div className="border-2 border-gray-300 p-6 rounded-3xl xl:p-12 xl:rounded-[48px] xl:space-y-12 bg-white xl:transform xl:-translate-y-9">
       <FormStepper currentStep={2} />
 
       <FormProvider {...form}>
@@ -115,7 +114,7 @@ export default function FreeTrialForm() {
                 type="button"
                 variant="bordered"
                 isDisabled={isPending}
-                className="bg-slide-bd rounded-3xl py-8 text-lg font-medium"
+                className="bg-slide-bd text-sm py-2 pr-3 pl-2 rounded-[18px] xl:rounded-3xl xl:py-8 xl:text-lg font-semibold"
                 onPress={back}
               >
                 <CircleArrowLeft />
@@ -130,11 +129,11 @@ export default function FreeTrialForm() {
                 variant="solid"
                 color="primary"
                 isDisabled={isPending}
-                className="bg-primary-purple rounded-3xl py-8 text-lg font-medium"
+                className="bg-primary-purple text-sm py-2 pr-2 pl-3 rounded-[18px] xl:rounded-3xl xl:py-8 xl:text-lg font-semibold"
                 onPress={nextStep}
               >
                 Siguiente
-                <CircleArrowRight />
+                <CircleArrowRight className="w-6 h-6" />
               </Button>
             )}
 
@@ -145,7 +144,7 @@ export default function FreeTrialForm() {
                 variant="solid"
                 color="primary"
                 isDisabled={isPending}
-                className="bg-primary-purple rounded-3xl py-8 text-lg font-medium"
+                className="bg-primary-purple text-sm py-2 pr-2 pl-3 rounded-[18px] xl:rounded-3xl xl:py-8 xl:text-lg font-semibold"
               >
                 Finalizar
                 <CircleArrowRight />
