@@ -43,8 +43,32 @@ export default function ContactForm() {
    */
   const onSubmit = async (data: z.infer<typeof ContactFormSchema>) => {
     console.log(data);
+    setFormState({ status: "", message: "" });
     startTransition(async () => {
-      setFormState({ status: "success", message: "" });
+      //Este es un mensaje de prueba desde el el formulario de contacto desde el nuevo website de quinder
+      try {
+        console.log("Entramos en el try");
+        const res = await fetch("/api/contact-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+
+        if (!res.ok) {
+          throw new Error("Error en el envío,");
+        }
+
+        setFormState({ status: "success", message: "" });
+      } catch (error) {
+        console.log(error);
+        setFormState({
+          status: "error",
+          message:
+            "Ha habido un error el enviar el correo, intenta neuvamente más tarde.",
+        });
+      }
     });
   };
 
@@ -259,13 +283,16 @@ export default function ContactForm() {
             <ul className="list-disc pl-8 space-y-2">
               <li>
                 Explora nuestras{" "}
-                <Link href="/funciones" className="text-blue-600 underline">
+                <Link
+                  href="/funcionalidades"
+                  className="text-blue-600 underline"
+                >
                   funcionalidades
                 </Link>
               </li>
               <li>
                 Conoce nuestros{" "}
-                <Link href="/precios" className="text-blue-600 underline">
+                <Link href="/precio" className="text-blue-600 underline">
                   planes y precios
                 </Link>
               </li>
