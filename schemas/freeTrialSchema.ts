@@ -18,6 +18,12 @@ export const FreeTrialFormSchema = z.object({
         .regex(/^\d{10}$/, "Ingrese un número de teléfono válido"),
       password: z.string().min(1, { message: "Ingrese su contraseña" }),
       passwordConfirm: z.string().min(1, { message: "Confirme su contraseña" }),
+      terms_and_conditions: z.boolean().refine((val: boolean) => !!val, {
+        error: "Debes aceptar los términos y condiciones",
+      }),
+      privacy_policy: z.boolean().refine((val: boolean) => !!val, {
+        error: "Debes aceptar la política de privadidad",
+      }),
     })
     .refine((data) => data.password === data.passwordConfirm, {
       message: "Las contraseñas deben ser iguales",
@@ -43,7 +49,5 @@ export const FreeTrialFormSchema = z.object({
       .regex(/^\d{5}$/, "Ingrese un código postal de 5 dígitos"),
     classrooms: z.transform(Number).pipe(z.number()).optional(),
     children: z.transform(Number).pipe(z.number()).optional(),
-    terms_and_conditions: z.boolean(),
-    privacy_policy: z.boolean(),
   }),
 });

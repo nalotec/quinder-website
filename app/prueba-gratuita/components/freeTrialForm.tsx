@@ -15,11 +15,16 @@ import Step3Confirmation from "./step3Confirmacion";
 
 export default function FreeTrialForm() {
   const [isPending, startTransition] = useTransition();
+
+  /**
+   * Pasos del formulario
+   */
   const { step, currentStep, next, back } = useMultiFormHook([
     <Step1UserData key={"Step1-UserData"} />,
     <Step2EstanciaData key={"Step2-EstanciaData"} />,
     <Step3Confirmation key={"Step3-Confirmation"} />,
   ]);
+
   const form = useForm<z.infer<typeof FreeTrialFormSchema>>({
     resolver: zodResolver(FreeTrialFormSchema),
     defaultValues: {
@@ -97,8 +102,8 @@ export default function FreeTrialForm() {
   };
 
   return (
-    <div className="border-2 border-gray-300 p-6 rounded-3xl xl:p-12 xl:rounded-[48px] xl:space-y-12 bg-white xl:transform xl:-translate-y-9">
-      <FormStepper currentStep={2} />
+    <div className="space-y-8 border-2 border-gray-300 p-6 rounded-3xl xl:p-12 xl:rounded-[48px] xl:space-y-12 bg-white xl:transform xl:-translate-y-9">
+      <FormStepper currentStep={currentStep + 1} />
 
       <FormProvider {...form}>
         <form onSubmit={form.handleSubmit(submitForm)} className="space-y-12">

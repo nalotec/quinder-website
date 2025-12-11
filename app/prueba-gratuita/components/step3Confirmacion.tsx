@@ -1,10 +1,21 @@
+import { FreeTrialFormSchema } from "@/schemas/freeTrialSchema";
 import { Checkbox } from "@heroui/checkbox";
 import { CircleUser, HouseHeart } from "lucide-react";
 import Link from "next/link";
-import { useFormContext } from "react-hook-form";
+import { Controller, useFormContext } from "react-hook-form";
+import z from "zod";
 
 export default function Step3Confirmation() {
-  const { getValues, register } = useFormContext();
+  const {
+    getValues,
+    register,
+    control,
+    formState: { errors },
+  } = useFormContext();
+
+  const errores = errors as Partial<
+    Record<keyof z.infer<typeof FreeTrialFormSchema>, any>
+  >;
 
   return (
     <div className="space-y-12">
@@ -83,28 +94,42 @@ export default function Step3Confirmation() {
           de privacidad
         </p>
         <div>
-          <Checkbox
-            {...register("terms_and_conditions")}
-            classNames={{ label: "text-sm text-txtSecondary" }}
-          >
-            He le&iacute;do y acepto los{" "}
-            <Link href="" className="text-blue-500">
-              t&eacute;rminos y condiciones
-            </Link>{" "}
-            de Quinder
-          </Checkbox>
+          <Controller
+            name="userDto.terms_and_conditions"
+            control={control}
+            render={({ field }) => (
+              <Checkbox
+                {...field}
+                classNames={{ label: "text-sm text-txtSecondary" }}
+                isInvalid={!!errores.userDto?.terms_and_conditions}
+              >
+                He le&iacute;do y acepto los{" "}
+                <Link href="" className="text-blue-500">
+                  t&eacute;rminos y condiciones
+                </Link>{" "}
+                de Quinder
+              </Checkbox>
+            )}
+          />
         </div>
         <div>
-          <Checkbox
-            {...register("privacy_policy")}
-            classNames={{ label: "text-sm text-txtSecondary" }}
-          >
-            He le&iacute;do y acepto la{" "}
-            <Link href="" className="text-blue-500">
-              pol&iacute;tica de privacidad
-            </Link>{" "}
-            de Quinder
-          </Checkbox>
+          <Controller
+            name="userDto.privacy_policy"
+            control={control}
+            render={({ field }) => (
+              <Checkbox
+                {...field}
+                classNames={{ label: "text-sm text-txtSecondary" }}
+                isInvalid={!!errores.userDto?.privacy_policy}
+              >
+                He le&iacute;do y acepto la{" "}
+                <Link href="" className="text-blue-500">
+                  pol&iacute;tica de privacidad
+                </Link>{" "}
+                de Quinder
+              </Checkbox>
+            )}
+          />
         </div>
       </div>
     </div>

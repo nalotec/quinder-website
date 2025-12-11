@@ -129,75 +129,77 @@ export default function Carousel() {
         <UnderlineText>Funcionalidades</UnderlineText> que te encantar&aacute;n
       </p>
 
-      {/* Botones de navegacion del carousel  */}
-      <div className="flex flex-col justify-center items-center gap-6 ">
-        <div className="flex items-center justify-center gap-3">
-          {slides.map((_, index) => (
-            <DotButton
-              key={index}
-              className={`p-1 ${selectedIndex === index ? "bg-primary-purple rounded-full text-white" : ""}`}
-              type="button"
-              onClick={() => {
-                onDotButtonClick(index);
-              }}
-            >
-              <CircleSmall
-                className="w-8 h-8"
-                strokeWidth={selectedIndex === index ? 2 : 1}
-              />
-            </DotButton>
-          ))}
+      <div className="flex-col gap-6">
+        {/* Botones de navegacion del carousel  */}
+        <div className="flex flex-col justify-center items-center gap-6 order-1 xl:order-2">
+          <div className="flex items-center justify-center gap-3">
+            {slides.map((_, index) => (
+              <DotButton
+                key={index}
+                className={`p-1 ${selectedIndex === index ? "bg-primary-purple rounded-full text-white" : ""}`}
+                type="button"
+                onClick={() => {
+                  onDotButtonClick(index);
+                }}
+              >
+                <CircleSmall
+                  className="w-8 h-8"
+                  strokeWidth={selectedIndex === index ? 2 : 1}
+                />
+              </DotButton>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Carousel  */}
-      <div className="overflow-hidden" ref={emblaRef}>
-        {/* Container  */}
-        <div className="flex">
-          {/* Slides  */}
+        {/* Carousel  */}
+        <div className="overflow-hidden order-2 xl:order-1" ref={emblaRef}>
+          {/* Container  */}
+          <div className="flex">
+            {/* Slides  */}
 
-          {slides.map((slide, index) => (
-            <div
-              key={index}
-              className="flex-none bg-slide-bd basis-full min-w-0 xl:flex"
-            >
+            {slides.map((slide, index) => (
               <div
-                className={`w-full 
+                key={index}
+                className="flex-none bg-slide-bd basis-full min-w-0 xl:flex"
+              >
+                <div
+                  className={`w-full 
                   py-8 px-3 space-y-6
                   xl:flex xl:items-center xl:gap-12 xl:p-12 xl:max-w-[1100px] xl:mx-auto xl:order-2`}
-              >
-                {/* Descripcion  */}
-                <div className="space-y-8">
-                  {/* Higlighted title  */}
-                  <div className="w-fit flex items-center justify-center py-3 px-5 bg-primary-green rounded-full ">
-                    <p className="quinder-h3 uppercase">{slide.btnTitle}</p>
-                  </div>
-
-                  {/* Subtitle  */}
-                  <p className="quinder-h2">{slide.title}</p>
-
-                  {/* Features  */}
+                >
+                  {/* Descripcion  */}
                   <div className="space-y-8">
-                    {slide.bullets.map((bullet) => (
-                      <div
-                        key={bullet.id}
-                        className="w-full space-y-3 md:flex md:items-start md:gap-3"
-                      >
-                        <div className="w-8 h-8">{bullet.icon}</div>
-                        <p className="quinder-p-display">{bullet.desc}</p>
-                      </div>
-                    ))}
+                    {/* Higlighted title  */}
+                    <div className="w-fit flex items-center justify-center py-3 px-5 bg-primary-green rounded-full ">
+                      <p className="quinder-h3 uppercase">{slide.btnTitle}</p>
+                    </div>
+
+                    {/* Subtitle  */}
+                    <p className="quinder-h2">{slide.title}</p>
+
+                    {/* Features  */}
+                    <div className="space-y-8">
+                      {slide.bullets.map((bullet) => (
+                        <div
+                          key={bullet.id}
+                          className="w-full space-y-3 md:flex md:items-start md:gap-3"
+                        >
+                          <div className="w-8 h-8">{bullet.icon}</div>
+                          <p className="quinder-p-display">{bullet.desc}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Imagen  */}
-              <img
-                src={slide.image}
-                className="block w-full xl:w-auto xl:order-1"
-              />
-            </div>
-          ))}
+                {/* Imagen  */}
+                <img
+                  src={slide.image}
+                  className="block w-full xl:w-auto xl:order-1"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
