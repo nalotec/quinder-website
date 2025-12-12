@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
       from: process.env.EMAIL_FROM,
       to: process.env.CONTACTO_TO_EMAIL,
       subject: `Nuevo mensaje de ${subject.toUpperCase()} de ${name.toUpperCase()}`,
-      // replyTo: email,
+      replyTo: email,
       html,
     });
 

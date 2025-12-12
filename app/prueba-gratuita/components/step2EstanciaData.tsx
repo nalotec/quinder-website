@@ -1,3 +1,4 @@
+import OptionalInputLabel from "@/components/ui/forms/optionalInputLabel";
 import { FreeTrialFormSchema } from "@/schemas/freeTrialSchema";
 import { Input } from "@heroui/input";
 import { useFormContext } from "react-hook-form";
@@ -47,7 +48,7 @@ export default function Step2EstanciaData() {
           variant="bordered"
           placeholder="p. ej. 5"
           label="Número de grupos o salones"
-          endContent={<OpcionalInputLabel />}
+          endContent={<OptionalInputLabel />}
           labelPlacement="outside-top"
           classNames={{
             label: "text-sm xl:text-[18px] text-foreground font-semibold",
@@ -65,7 +66,7 @@ export default function Step2EstanciaData() {
           variant="bordered"
           placeholder="p. ej. 30"
           label="Número de niñas y niños"
-          endContent={<OpcionalInputLabel />}
+          endContent={<OptionalInputLabel />}
           labelPlacement="outside-top"
           classNames={{
             label: "text-sm xl:text-[18px] text-foreground font-semibold",
@@ -85,7 +86,7 @@ export default function Step2EstanciaData() {
           variant="bordered"
           placeholder="p. ej. 5511223344"
           label="Teléfono de la estancia"
-          endContent={<OpcionalInputLabel />}
+          endContent={<OptionalInputLabel />}
           labelPlacement="outside-top"
           classNames={{
             label: "text-sm xl:text-[18px] text-foreground font-semibold",
@@ -103,7 +104,7 @@ export default function Step2EstanciaData() {
           variant="bordered"
           placeholder="p. ej. www.guarderiaabejita.com"
           label="Sitio web"
-          endContent={<OpcionalInputLabel />}
+          endContent={<OptionalInputLabel />}
           labelPlacement="outside-top"
           classNames={{
             label: "text-sm xl:text-[18px] text-foreground font-semibold",
@@ -142,7 +143,7 @@ export default function Step2EstanciaData() {
         placeholder=""
         label="Dirección línea 2"
         labelPlacement="outside-top"
-        endContent={<OpcionalInputLabel />}
+        endContent={<OptionalInputLabel />}
         classNames={{
           label: "text-sm xl:text-[18px] text-foreground font-semibold",
           input: "text-sm text-txtSecondary xl:text-[18px] font-medium",
@@ -223,8 +224,4 @@ export default function Step2EstanciaData() {
       </div>
     </div>
   );
-}
-
-export function OpcionalInputLabel() {
-  return <p className="text-txtSecondary text-sm font-semibold">Opcional</p>;
 }

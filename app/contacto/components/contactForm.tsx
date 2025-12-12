@@ -12,6 +12,7 @@ import { CircleArrowRight } from "lucide-react";
 import Link from "next/link";
 import { FormStateT } from "@/types/formStateType";
 import { LinkButton } from "@/components/ui/styledComponents/button";
+import OptionalInputLabel from "@/components/ui/forms/optionalInputLabel";
 
 const asuntos = ["contrataciones", "soporte", "sugerencias"];
 
@@ -201,20 +202,33 @@ export default function ContactForm() {
             />
 
             {/* Teléfono de contacto */}
-            <Input
-              {...form.register("phone")}
-              label="Teléfono de contacto (opcional)"
-              labelPlacement="outside-top"
-              placeholder="p.ej. 5566778899"
-              variant="bordered"
-              classNames={{
-                label: "font-semibold text-sm xl:text-[18px]",
-                input: "text-sm xl:text-[18px] bg-white",
-                errorMessage: "text-xs xl:text-sm font-medium",
-              }}
-              isInvalid={!!form.formState.errors.phone}
-              errorMessage={form.formState.errors.phone?.message}
-              isDisabled={isPending}
+            <Controller
+              name="phone"
+              control={control}
+              render={({ field }) => (
+                <Input
+                  {...field}
+                  label="Teléfono de contacto"
+                  labelPlacement="outside-top"
+                  placeholder="p.ej. 5566778899"
+                  variant="bordered"
+                  classNames={{
+                    label: "font-semibold text-sm xl:text-[18px]",
+                    input: "text-sm xl:text-[18px] bg-white",
+                    errorMessage: "text-xs xl:text-sm font-medium",
+                  }}
+                  isInvalid={!!form.formState.errors.phone}
+                  errorMessage={form.formState.errors.phone?.message}
+                  isDisabled={isPending}
+                  maxLength={10}
+                  endContent={<OptionalInputLabel />}
+                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                    console.log("Phone: ", event.target.value);
+                    const value = event.target.value.replace(/\D/g, "");
+                    form.setValue("phone", value);
+                  }}
+                />
+              )}
             />
           </div>
 
